@@ -1,56 +1,44 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+Console.WriteLine("por favor ingrese 10 numeros");
 
-Console.Clear();
+int[] numeros = new int[10];
 
+    for (int i = 0; i < numeros.Length; i++)
+     {
+          numeros[i] = int.Parse(Console.ReadLine());
+     }
 
-Console.WriteLine("Introduzca su nombre");
-string nombre = Console.ReadLine();
-Console.WriteLine($"¡hola {nombre}!");
+ 
 
-
-Console.WriteLine("deseas continuar? S/N");
- string respuesta = Console.ReadLine();
-
-
-
-// decidí que las letras minusculas s y n cuenten como S y N 
+int suma = 0; 
 
 
+    for (int i = 0; i < numeros.Length; i++)
+     {
+        suma = suma + numeros[i];
+     
+     }
 
-switch (respuesta.ToUpper())
-{
-    case "S":
-        while (respuesta.ToUpper () ==  "S" )
+
+Console.WriteLine("sus numeros elegidos son:  ");
+    for (int i = 0; i < numeros.Length; i++)
         {
-
-            Console.WriteLine("Introduzca su nombre");
-            string nombre1 = Console.ReadLine();
-            Console.WriteLine($"¡hola {nombre1}!");
-
-            Console.WriteLine("deseas continuar? S/N");
-             
-            respuesta = Console.ReadLine();
-
-            if (respuesta.ToUpper() == "N")
-            { Console.WriteLine("Programa finalizado correctamente"); 
-            }
-
+      Console.WriteLine(numeros[i]);
         }
-        break;
-
-    case "N":
-        Console.WriteLine("Programa finalizado correctamente");
-            break;
-    default:
-        Console.WriteLine("Opción no valida");
-        break;
 
 
 
-}
+Console.WriteLine($"la suma de sus números elegidos es:   {suma}");
+
+Console.WriteLine($"el número mínimo elegído es: {numeros.Min()}");
+
+Console.WriteLine($"el número máximo elegído es: {numeros.Max()}");
 
 
-        
+int promedio = suma / numeros.Length; 
+Console.WriteLine($"el promedio de sus números elegidos es: {promedio}");
 
-            
+
+
+
+
